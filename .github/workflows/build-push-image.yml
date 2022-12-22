@@ -1,0 +1,38 @@
+name: Build and push container image
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 1 * *' # as monthly build
+
+jobs:
+  build-push-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install QEMU dependency
+        run: |
+          sudo apt update
+          DEBIAN_FRONTEND=noninteractive sudo apt install -y --no-install-recommends \
+          qemu-user-static
+
+      - name: Build container image
+        uses: redhat-actions/buildah-build@v2
+        with:
+          image: ${{ secrets.DOCKER_REPOSITORY }}
+          tags: latest
+          platforms: linux/amd64, linux/arm64
+          containerfiles: |
+            ./Containerfile
+
+      - name: Push container image to Docker Hub
+        uses: redhat-actions/push-to-registry@v2
+        with:
+          registry: docker.io
+          image: ${{ secrets.DOCKER_REPOSITORY }}
+          tags: latest
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
