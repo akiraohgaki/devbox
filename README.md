@@ -2,6 +2,10 @@
 
 A container as a development environment.
 
+![screenshot-01](images/screenshot-01.jpg)
+
+![screenshot-02](images/screenshot-02.jpg)
+
 ## How to run the devbox container
 
 ### GitHub Codespaces
