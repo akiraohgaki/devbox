@@ -22,8 +22,6 @@ To use the devbox container like a remote machine that connect from https://vsco
 docker run --name devbox -ti docker.io/akiraohgaki/devbox code-server serve
 ```
 
-> When first run, setup process is executed and SSH keys without passphrase for the user within the container is automatically generated, and tools (for example ZSH, Git, Vim, and Visual Studio Code Server) are also preconfigured.
-
 ### Use with terminal
 
 You can also running the container with any command like zsh so that Visual Studio Code Server does not start automatically.
@@ -31,6 +29,8 @@ You can also running the container with any command like zsh so that Visual Stud
 ```sh
 docker run --name devbox -ti docker.io/akiraohgaki/devbox zsh
 ```
+
+> When first run, setup process is executed and SSH keys without passphrase for the user within the container is automatically generated, and tools (for example ZSH, Git, Vim, and Visual Studio Code Server) are also preconfigured.
 
 ## Pre-installed developer tools
 
