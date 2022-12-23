@@ -15,7 +15,7 @@ The container comes pre-installed with Visual Studio Code Server and other popul
 
 ## SSH keys
 
-New SSH keys without passphrase has been generated, you can add these public keys to source code hosting services to access the source code repositories.
+New SSH keys without passphrase has been generated, you can add these public keys to source code hosting services to access to repositories via SSH.
 
 ```sh
 : Public Ed25519 key
