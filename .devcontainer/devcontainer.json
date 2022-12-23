@@ -2,5 +2,5 @@
   "image": "docker.io/akiraohgaki/devbox:latest",
   "overrideCommand": true,
   "workspaceFolder": "/home/devbox",
-  "onCreateCommand": "/devbox/entrypoint.sh :"
+  "onCreateCommand": "/devbox/entrypoint.sh env"
 }
