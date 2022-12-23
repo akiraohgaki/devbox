@@ -17,12 +17,12 @@ The container comes pre-installed with Visual Studio Code Server and other popul
 
 New SSH keys without passphrase has been generated, you can add these public keys to source code hosting services to access the source code repositories.
 
-```
+```sh
 : Public Ed25519 key
 cat ~/.ssh/id_ed25519.pub
 ```
 
-```
+```sh
 : Public RSA key
 cat ~/.ssh/id_rsa.pub
 ```
@@ -31,12 +31,12 @@ cat ~/.ssh/id_rsa.pub
 
 Please configure your name and email address in Git, for author identity for commits.
 
-```
+```sh
 : Set your name
 git config --global user.name "Your Name"
 ```
 
-```
+```sh
 : Set your email address
 git config --global user.email "username@example.com"
 ```
