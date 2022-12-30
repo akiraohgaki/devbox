@@ -40,3 +40,5 @@ echo "source ${ENV_FILE}" >>"${HOME}/.bashrc"
 
 echo '' >>"${HOME}/.zshrc"
 echo "source ${ENV_FILE}" >>"${HOME}/.zshrc"
+
+cp /devbox/setup/README-devbox.md "${HOME}/README-devbox.md"
