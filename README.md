@@ -60,3 +60,48 @@ The default user has sudo rights, but no password is asked.
 - Password: devbox
 - Shell: /bin/zsh
 - sudo: Full privileged
+
+## How to personalize your devbox container
+
+devbox container instances can be personalized in `/devbox/setup-additions/system.sh` and `/devbox/setup-additions/user.sh`.
+
+For example, create the following bash scripts in a local directory in the host OS and run the container with the directory mounted.
+
+[ setup-additions/system.sh ]
+
+```bash
+#!/bin/bash
+
+# Install additional packages
+sudo apt update
+DEBIAN_FRONTEND=noninteractive sudo apt install -y --no-install-recommends \
+  package-name package-name ...
+
+# Change the UID and GID of the default user
+sudo usermod -u 500 $(id -un)
+sudo groupmod -g 501 $(id -gn)
+```
+
+[ setup-additions/user.sh ]
+
+```bash
+#!/bin/bash
+
+# Copy SSH key pair
+cp /devbox/setup-additions/ssh/id_rsa ${HOME}/.ssh/id_rsa
+cp /devbox/setup-additions/ssh/id_rsa.pub ${HOME}/.ssh/id_rsa.pub
+chmod 600 ${HOME}/.ssh/id_rsa
+chmod 644 ${HOME}/.ssh/id_rsa.pub
+
+# Set up user name and email in Git
+git config --global user.name "Your Name"
+git config --global user.email "username@example.com"
+```
+
+Runs devbox container with volume.
+
+```sh
+docker run --name devbox -p 8000:8000 -d \
+  -v $(pwd)/setup-additions:/devbox/setup-additions:ro \
+  docker.io/akiraohgaki/devbox
+```
