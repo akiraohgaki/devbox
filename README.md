@@ -60,3 +60,44 @@ The default user has sudo rights, but no password is asked.
 - Password: devbox
 - Shell: /bin/zsh
 - sudo: Full privileged
+
+## How to personalize the devbox container
+
+The devbox container can be personalized in `/devbox/setup-additions/system.sh` and `/devbox/setup-additions/user.sh` at first run.
+
+For example, create the bash scripts like following in a local directory of the host OS, and run the devbox container has mounted the local directory as `/devbox/setup-additions`.
+
+[ setup-additions/system.sh ]
+
+```bash
+#!/bin/bash
+
+# Install additional packages
+sudo apt update
+DEBIAN_FRONTEND=noninteractive sudo apt install -y --no-install-recommends \
+  tmux p7zip-full
+```
+
+[ setup-additions/user.sh ]
+
+```bash
+#!/bin/bash
+
+# Copy SSH key pair
+cp /devbox/setup-additions/ssh/id_rsa ${HOME}/.ssh/id_rsa
+cp /devbox/setup-additions/ssh/id_rsa.pub ${HOME}/.ssh/id_rsa.pub
+chmod 600 ${HOME}/.ssh/id_rsa
+chmod 644 ${HOME}/.ssh/id_rsa.pub
+
+# Configure user name and email in Git
+git config --global user.name "Full Name"
+git config --global user.email "username@example.com"
+```
+
+Runs the devbox container with the setup-additions directory mounted.
+
+```sh
+docker run --name devbox -p 8000:8000 -d \
+  -v $(pwd)/setup-additions:/devbox/setup-additions:ro \
+  docker.io/akiraohgaki/devbox
+```
