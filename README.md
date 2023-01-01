@@ -76,10 +76,6 @@ For example, create the following bash scripts in a local directory in the host 
 sudo apt update
 DEBIAN_FRONTEND=noninteractive sudo apt install -y --no-install-recommends \
   package-name package-name ...
-
-# Change the UID and GID of the default user
-sudo usermod -u 500 $(id -un)
-sudo groupmod -g 501 $(id -gn)
 ```
 
 [ setup-additions/user.sh ]
