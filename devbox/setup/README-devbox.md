@@ -33,7 +33,7 @@ Please configure your name and email address in Git, for author identity for com
 
 ```sh
 : Set your name
-git config --global user.name "Your Name"
+git config --global user.name "Full Name"
 ```
 
 ```sh
