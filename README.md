@@ -85,10 +85,10 @@ DEBIAN_FRONTEND=noninteractive sudo apt install -y --no-install-recommends \
 #!/bin/bash
 
 # Copy SSH key pair
-cp /devbox/setup-additions/ssh/id_rsa ${HOME}/.ssh/id_rsa
-cp /devbox/setup-additions/ssh/id_rsa.pub ${HOME}/.ssh/id_rsa.pub
-chmod 600 ${HOME}/.ssh/id_rsa
-chmod 644 ${HOME}/.ssh/id_rsa.pub
+sudo cp /devbox/setup-additions/ssh/id_* ${HOME}/.ssh/
+sudo chown $(id -un):$(id -gn) ${HOME}/.ssh/id_*
+chmod 600 ${HOME}/.ssh/id_*
+chmod 644 ${HOME}/.ssh/id_*.pub
 
 # Configure user name and email in Git
 git config --global user.name "Full Name"
