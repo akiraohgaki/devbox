@@ -10,7 +10,9 @@ curl -fsSL https://sh.rustup.rs | RUSTUP_HOME="${INSTALL_PREFIX}" CARGO_HOME="${
 echo "export RUSTUP_HOME=${INSTALL_PREFIX}" >>"${ENV_FILE}"
 echo "export CARGO_HOME=${INSTALL_PREFIX}" >>"${ENV_FILE}"
 
-curl -fsSL https://deno.land/x/install/install.sh | DENO_INSTALL="${INSTALL_PREFIX}" sh -s --
+#curl -fsSL https://deno.land/x/install/install.sh | DENO_INSTALL="${INSTALL_PREFIX}" sh -s --
+# Use alternative installer: https://github.com/LukeChannings/deno-arm64
+curl -fsSL https://gist.githubusercontent.com/LukeChannings/09d53f5c364391042186518c8598b85e/raw/ac8cd8c675b985edd4b3e16df63ffef14d1f0e24/deno_install.sh | DENO_INSTALL="${INSTALL_PREFIX}" sh -s --
 echo "export DENO_INSTALL=${INSTALL_PREFIX}" >>"${ENV_FILE}"
 
 curl -fsSL https://raw.githubusercontent.com/tj/n/master/bin/n -o "${INSTALL_PREFIX}/bin/n" --create-dirs
