@@ -8,7 +8,7 @@ ARG USER_PASSWORD=devbox
 ARG USER_SHELL=/bin/zsh
 
 RUN apt update && \
-  apt upgrade -y && \
+  DEBIAN_FRONTEND=noninteractive apt upgrade -y --no-install-recommends && \
   DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends \
   ca-certificates \
   sudo \
