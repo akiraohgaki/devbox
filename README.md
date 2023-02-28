@@ -24,7 +24,7 @@ docker run --name devbox -p 8000:8000 -d docker.io/akiraohgaki/devbox
 To use the devbox container as a Visual Studio Code Server that can be accessed from https://vscode.dev/ and from any Visual Studio Code desktop, run the following in your terminal, then follow the on-screen instructions.
 
 ```sh
-docker run --name devbox -ti docker.io/akiraohgaki/devbox code-server serve
+docker run --name devbox -ti docker.io/akiraohgaki/devbox code tunnel
 ```
 
 ### Use with terminal
