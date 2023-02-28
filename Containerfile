@@ -35,9 +35,10 @@ RUN apt update && \
 
 RUN curl -fsSL https://aka.ms/install-vscode-server/setup.sh | sh
 
-COPY install-vscode-cli.sh /tmp/install-vscode-cli.sh
+COPY scripts /tmp/scripts
 
-RUN bash /tmp/install-vscode-cli.sh && rm /tmp/install-vscode-cli.sh
+RUN bash /tmp/scripts/install-vscode-cli.sh && \
+  rm -rf /tmp/scripts
 
 COPY devbox /devbox
 
