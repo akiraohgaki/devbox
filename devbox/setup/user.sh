@@ -2,7 +2,7 @@
 
 CONFIGS_BASE_URL='https://raw.githubusercontent.com/akiraohgaki/configs/main'
 INSTALL_PREFIX="${HOME}/.local"
-ENV_FILE="${HOME}/.devboxenv"
+ENV_FILE="${HOME}/.localenv"
 
 touch "${ENV_FILE}"
 
@@ -39,8 +39,5 @@ curl -fsSL "${CONFIGS_BASE_URL}/vscode/extensions.json" -o "${HOME}/Projects/.vs
 
 echo '' >>"${HOME}/.bashrc"
 echo "source ${ENV_FILE}" >>"${HOME}/.bashrc"
-
-echo '' >>"${HOME}/.zshrc"
-echo "source ${ENV_FILE}" >>"${HOME}/.zshrc"
 
 cp /devbox/setup/README-devbox.md "${HOME}/README-devbox.md"
