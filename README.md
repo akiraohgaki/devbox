@@ -35,7 +35,9 @@ You can also start the devbox container with any command, such as zsh, so that V
 docker run --name devbox -ti docker.io/akiraohgaki/devbox zsh
 ```
 
-> The first time it is run, the setup process runs and automatically generates SSH keys for the user inside the container, and also preconfigures tools (for example, ZSH, Git, Vim, and Visual Studio Code Server).
+### Tips
+
+The first time it is run, the setup process runs and automatically generates SSH keys for the user inside the container, and also preconfigures tools (for example, ZSH, Git, Vim, and Visual Studio Code Server).
 
 ## Pre-installed developer tools
 
