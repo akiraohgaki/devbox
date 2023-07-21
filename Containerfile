@@ -35,8 +35,7 @@ RUN apt update && \
 
 COPY devbox /devbox
 
-RUN chmod 755 /devbox/entrypoint.sh && \
-  chmod 755 /devbox/start.sh
+RUN chmod 755 /devbox/entrypoint.sh
 
 RUN groupadd -g ${USER_GID} ${USER_GROUPNAME} && \
   useradd -m -s ${USER_SHELL} -u ${USER_UID} -g ${USER_GID} ${USER_USERNAME} && \
@@ -44,12 +43,10 @@ RUN groupadd -g ${USER_GID} ${USER_GROUPNAME} && \
   echo "${USER_USERNAME}:${USER_PASSWORD}" | chpasswd && \
   echo "${USER_USERNAME} ALL=(ALL) NOPASSWD: ALL" >>/etc/sudoers
 
-EXPOSE 8000
-
 USER ${USER_USERNAME}
 
 WORKDIR /home/${USER_USERNAME}
 
 ENTRYPOINT ["/devbox/entrypoint.sh"]
 
-CMD ["/devbox/start.sh"]
+CMD ["env"]

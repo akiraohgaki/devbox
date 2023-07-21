@@ -2,9 +2,9 @@
 
 Welcome to devbox, a container as a development environment!
 
-The container comes pre-installed with Visual Studio Code Server and other popular developer tools.
+The container comes pre-installed with popular developer tools.
 
-- code-server, code
+- code
 - vim, git, curl, jq
 - gcc, g++, make, cmake
 - java, javac, mvn, gradle

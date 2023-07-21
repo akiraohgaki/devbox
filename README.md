@@ -15,12 +15,6 @@ That's all.
 
 ### Visual Studio Code Server
 
-To use the devbox container as a Visual Studio Code Server that can be accessed locally, run the following in your terminal, then open http://localhost:8000/ in your browser.
-
-```sh
-docker run --name devbox -p 8000:8000 -d docker.io/akiraohgaki/devbox
-```
-
 To use the devbox container as a Visual Studio Code Server that can be accessed from https://vscode.dev/ and from any Visual Studio Code desktop, run the following in your terminal, then follow the on-screen instructions.
 
 ```sh
@@ -29,7 +23,7 @@ docker run --name devbox -ti docker.io/akiraohgaki/devbox code tunnel
 
 ### Use with terminal
 
-You can also start the devbox container with any command, such as zsh, so that Visual Studio Code Server does not start automatically.
+You can also start the devbox container with any command, such as zsh.
 
 ```sh
 docker run --name devbox -ti docker.io/akiraohgaki/devbox zsh
@@ -100,7 +94,7 @@ git config --global user.email "username@example.com"
 Runs the devbox container with the setup-additions directory mounted.
 
 ```sh
-docker run --name devbox -p 8000:8000 -d \
+docker run --name devbox -ti \
   -v $(pwd)/setup-additions:/devbox/setup-additions:ro \
-  docker.io/akiraohgaki/devbox
+  docker.io/akiraohgaki/devbox code tunnel
 ```
