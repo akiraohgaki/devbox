@@ -36,7 +36,7 @@ RUN apt update && \
 COPY devbox /devbox
 
 RUN chmod 755 /devbox/entrypoint.sh && \
-  chmod 755 /devbox/launcher.sh
+  chmod 755 /devbox/launch.sh
 
 RUN groupadd -g ${USER_GID} ${USER_GROUPNAME} && \
   useradd -m -s ${USER_SHELL} -u ${USER_UID} -g ${USER_GID} ${USER_USERNAME} && \
