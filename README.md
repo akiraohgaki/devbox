@@ -29,6 +29,13 @@ You can also start the devbox container with any command, such as zsh.
 docker run --name devbox -ti docker.io/akiraohgaki/devbox zsh
 ```
 
+Alternatively, you can start the container in detached mode, then run any command.
+
+```sh
+docker run --name devbox -d docker.io/akiraohgaki/devbox
+docker exec -ti devbox zsh
+```
+
 ### Tips
 
 The first time it is run, the setup process runs and automatically generates SSH keys for the user inside the container, and also preconfigures tools (for example, ZSH, Git, Vim, and Visual Studio Code Server).
