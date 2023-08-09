@@ -10,7 +10,6 @@ ARG USER_SHELL=/bin/zsh
 RUN apt update && \
   DEBIAN_FRONTEND=noninteractive apt upgrade -y --no-install-recommends && \
   DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends \
-  ca-certificates \
   sudo \
   zsh \
   ssh \
@@ -29,13 +28,15 @@ RUN apt update && \
   maven \
   gradle \
   python3 \
-  python3-pip && \
+  python3-pip \
+  ca-certificates && \
   apt clean && \
   rm -rf /var/lib/apt/lists/*
 
 COPY devbox /devbox
 
-RUN chmod 755 /devbox/entrypoint.sh
+RUN chmod 755 /devbox/entrypoint.sh && \
+  chmod 755 /devbox/launcher.sh
 
 RUN groupadd -g ${USER_GID} ${USER_GROUPNAME} && \
   useradd -m -s ${USER_SHELL} -u ${USER_UID} -g ${USER_GID} ${USER_USERNAME} && \
@@ -49,4 +50,4 @@ WORKDIR /home/${USER_USERNAME}
 
 ENTRYPOINT ["/devbox/entrypoint.sh"]
 
-CMD ["env"]
+CMD ["/devbox/launch.sh"]
