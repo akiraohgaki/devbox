@@ -10,7 +10,6 @@ ARG USER_SHELL=/bin/zsh
 RUN apt update && \
   DEBIAN_FRONTEND=noninteractive apt upgrade -y --no-install-recommends && \
   DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends \
-  ca-certificates \
   sudo \
   zsh \
   ssh \
@@ -29,7 +28,8 @@ RUN apt update && \
   maven \
   gradle \
   python3 \
-  python3-pip && \
+  python3-pip \
+  ca-certificates && \
   apt clean && \
   rm -rf /var/lib/apt/lists/*
 
@@ -50,4 +50,4 @@ WORKDIR /home/${USER_USERNAME}
 
 ENTRYPOINT ["/devbox/entrypoint.sh"]
 
-CMD ["/devbox/launcher.sh"]
+CMD ["/devbox/launch.sh"]
