@@ -21,6 +21,13 @@ To use the devbox container as a Visual Studio Code Server that can be accessed 
 docker run --name devbox -ti docker.io/akiraohgaki/devbox code tunnel
 ```
 
+Alternatively, start the devbox container with openvscode-server that can be accessed from http://localhost:PORT/
+
+```sh
+docker run --name devbox -p 3000:3000 -d docker.io/akiraohgaki/devbox \
+  openvscode-server --host 0.0.0.0 --port 3000 --without-connection-token
+```
+
 ### Use with terminal
 
 You can also start the devbox container with any command, such as zsh.
@@ -29,7 +36,7 @@ You can also start the devbox container with any command, such as zsh.
 docker run --name devbox -ti docker.io/akiraohgaki/devbox zsh
 ```
 
-Alternatively, you can start the container in detached mode, then run any command.
+Alternatively, start the devbox container in detached mode, then run any command.
 
 ```sh
 docker run --name devbox -d docker.io/akiraohgaki/devbox
