@@ -1,6 +1,8 @@
 #/bin/bash
 
 CMD='sleep infinity'
+#CMD='code tunnel'
+#CMD='openvscode-server --host 0.0.0.0 --port 3000 --without-connection-token'
 
 CMD_PID=0
 
