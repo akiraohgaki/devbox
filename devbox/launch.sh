@@ -2,7 +2,7 @@
 
 CMD='sleep infinity'
 #CMD='code tunnel'
-#CMD='openvscode-server --host 0.0.0.0 --port 3000 --without-connection-token'
+#CMD='code serve-web --host 0.0.0.0 --port 8000 --without-connection-token --accept-server-license-terms'
 
 CMD_PID=0
 

@@ -21,11 +21,11 @@ To use the devbox container as a Visual Studio Code Server that can be accessed 
 docker run --name devbox -ti docker.io/akiraohgaki/devbox code tunnel
 ```
 
-Another choice, you can use OpenVSCode Server that can be accessed from localhost like http://localhost:3000/
+Alternatively, you can use the Visual Studio Code Server that can be accessed from localhost like http://localhost:8000/
 
 ```sh
-docker run --name devbox -p 3000:3000 -d docker.io/akiraohgaki/devbox \
-  openvscode-server --host 0.0.0.0 --port 3000 --without-connection-token
+docker run --name devbox -p 8000:8000 -d docker.io/akiraohgaki/devbox \
+  code serve-web --host 0.0.0.0 --port 8000 --without-connection-token
 ```
 
 ### Use with terminal
@@ -52,7 +52,6 @@ The first time it is run, the setup process runs and automatically generates SSH
 Ubuntu based container is running and ready to develop with below.
 
 - Visual Studio Code Server
-- OpenVSCode Server
 - Vim
 - Git
 - C/C++
