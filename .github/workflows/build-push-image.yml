@@ -6,13 +6,17 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 0 1 * *' # as monthly build
+    - cron: "0 0 1 * *" # as monthly build
 
 jobs:
   build-push-image:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
+      - name: Update devbox/status.txt
+        run: |
+          echo "Last updated: $(date -u)" > devbox/status.txt
 
       - name: Install QEMU dependency
         run: |
@@ -37,3 +41,14 @@ jobs:
           tags: latest
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Apply automatic changes
+        run: |
+          git add -N .
+          if ! git diff --exit-code --quiet; then
+            git config --local user.name 'GitHub Actions'
+            git config --local user.email 'actions@github.com'
+            git add .
+            git commit -m 'Apply automatic changes'
+            git push
+          fi
