@@ -24,8 +24,7 @@ jobs:
           DEBIAN_FRONTEND=noninteractive sudo apt install -y --no-install-recommends \
           qemu-user-static
 
-      - name: Build container image
-        uses: redhat-actions/buildah-build@v2
+      - uses: redhat-actions/buildah-build@v2
         with:
           image: ${{ secrets.DOCKER_REPOSITORY }}
           tags: latest
@@ -33,8 +32,7 @@ jobs:
           containerfiles: |
             ./Containerfile
 
-      - name: Push container image to Docker Hub
-        uses: redhat-actions/push-to-registry@v2
+      - uses: redhat-actions/push-to-registry@v2
         with:
           registry: docker.io
           image: ${{ secrets.DOCKER_REPOSITORY }}
