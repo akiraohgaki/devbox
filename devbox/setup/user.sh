@@ -35,7 +35,7 @@ curl -fsSL "${CONFIGS_BASE_URL}/vim/.vimrc" -o "${HOME}/.vimrc"
 
 curl -fsSL "${CONFIGS_BASE_URL}/vscode/settings.json" -o "${HOME}/.vscode-remote/data/Machine/settings.json" --create-dirs
 curl -fsSL "${CONFIGS_BASE_URL}/vscode/settings.json" -o "${HOME}/.vscode-server/data/Machine/settings.json" --create-dirs
-curl -fsSL "${CONFIGS_BASE_URL}/vscode/extensions.json" -o "${HOME}/Projects/.vscode/extensions.json" --create-dirs
+curl -fsSL "${CONFIGS_BASE_URL}/vscode/extensions.json" -o "${HOME}/workspaces/.vscode/extensions.json" --create-dirs
 
 echo '' >>"${HOME}/.bashrc"
 echo "source ${ENV_FILE}" >>"${HOME}/.bashrc"
