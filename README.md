@@ -49,7 +49,7 @@ The first time it is run, the setup process runs and automatically generates SSH
 
 ## Pre-installed developer tools
 
-Ubuntu based container is running and ready to develop with below.
+Debian based container is running and ready to develop with below.
 
 - Visual Studio Code Server
 - Vim
