@@ -1,4 +1,4 @@
-FROM docker.io/library/ubuntu:latest
+FROM docker.io/library/debian:stable-slim
 
 ARG USER_UID=1000
 ARG USER_GID=1000
