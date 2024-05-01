@@ -40,4 +40,4 @@ curl -fsSL "${CONFIGS_BASE_URL}/vscode/extensions.json" -o "${HOME}/workspaces/.
 echo '' >>"${HOME}/.bashrc"
 echo "source ${ENV_FILE}" >>"${HOME}/.bashrc"
 
-cp /devbox/setup/README-devbox.md "${HOME}/README-devbox.md"
+cp /devbox/README-devbox.md "${HOME}/README-devbox.md"
