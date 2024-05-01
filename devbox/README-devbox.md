@@ -2,6 +2,8 @@
 
 Welcome to devbox, a container as a development environment!
 
+## Developer tools
+
 The container comes pre-installed with popular developer tools.
 
 - code
