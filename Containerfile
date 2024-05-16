@@ -23,10 +23,6 @@ RUN apt update && \
   jq \
   build-essential \
   cmake \
-  default-jre \
-  default-jdk \
-  maven \
-  gradle \
   python3 \
   python3-pip \
   ca-certificates && \

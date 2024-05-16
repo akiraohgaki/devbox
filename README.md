@@ -55,7 +55,6 @@ Debian based container is running and ready to develop with below.
 - Vim
 - Git
 - C/C++
-- Java
 - Python
 - Rust
 - Deno

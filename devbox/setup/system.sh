@@ -2,7 +2,10 @@
 
 #sudo apt update
 #DEBIAN_FRONTEND=noninteractive sudo apt install -y --no-install-recommends \
-#package-name
+#  default-jre \
+#  default-jdk \
+#  maven \
+#  gradle
 #sudo apt clean
 #sudo rm -rf /var/lib/apt/lists/*
 
