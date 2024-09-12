@@ -1,5 +1,7 @@
 # devbox
 
+[![Docker Hub](https://img.shields.io/badge/Docker%20Hub-latest-black?logo=docker&logoColor=white&labelColor=blue)](https://hub.docker.com/r/akiraohgaki/devbox)
+
 A container as a development environment.
 
 ![screenshot-01](images/screenshot-01.jpg)
@@ -43,9 +45,8 @@ docker run --name devbox -d docker.io/akiraohgaki/devbox
 docker exec -ti devbox zsh
 ```
 
-### Tips
-
-The first time it is run, the setup process runs and automatically generates SSH keys for the user inside the container, and also preconfigures tools (for example, ZSH, Git, Vim, and Visual Studio Code Server).
+> [!NOTE]
+> The first time it is run, the setup process runs and automatically generates SSH keys for the user inside the container, and also preconfigures tools (for example, ZSH, Git, Vim, and Visual Studio Code Server).
 
 ## Pre-installed developer tools
 
