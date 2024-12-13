@@ -35,7 +35,6 @@ curl -fsSL -o "${HOME}/.vscode-remote/data/Machine/settings.json" --create-dirs 
 curl -fsSL -o "${HOME}/.vscode-server/data/Machine/settings.json" --create-dirs "${CONFIGS_BASE_URL}/vscode/settings.json"
 curl -fsSL -o "${HOME}/workspaces/.vscode/extensions.json" --create-dirs "${CONFIGS_BASE_URL}/vscode/extensions.json"
 
-echo '' >>"${HOME}/.bashrc"
-echo "source ${ENV_FILE}" >>"${HOME}/.bashrc"
+echo $'\n'"source ${ENV_FILE}" >>"${HOME}/.bashrc"
 
 cp /devbox/README-devbox.md "${HOME}/README-devbox.md"
