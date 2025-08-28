@@ -25,6 +25,7 @@ RUN apt update && \
   cmake \
   python3 \
   python3-pip \
+  python3-venv \
   ca-certificates && \
   apt clean && \
   rm -rf /var/lib/apt/lists/*
