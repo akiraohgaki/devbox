@@ -1,5 +1,6 @@
+.devcontainer/
 .git/
 .github/
-.devcontainer/
 images/
+.gitignore
 README.md
