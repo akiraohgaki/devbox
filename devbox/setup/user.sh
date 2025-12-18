@@ -12,6 +12,7 @@ echo "export CARGO_HOME=${INSTALL_PREFIX}" >>"${ENV_FILE}"
 
 curl -fsSL https://deno.land/install.sh | DENO_INSTALL="${INSTALL_PREFIX}" sh -s -- -y --no-modify-path
 echo "export DENO_INSTALL=${INSTALL_PREFIX}" >>"${ENV_FILE}"
+DENO_INSTALL=${INSTALL_PREFIX}" "${INSTALL_PREFIX}/bin/deno" x --install-alias
 
 curl -fsSL -o "${INSTALL_PREFIX}/bin/n" --create-dirs https://raw.githubusercontent.com/tj/n/master/bin/n
 chmod 755 "${INSTALL_PREFIX}/bin/n"
