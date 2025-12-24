@@ -6,13 +6,13 @@ Welcome to devbox, a container as a development environment!
 
 The container comes pre-installed with popular developer tools.
 
-- code
-- vim, git, curl, jq
+- code, vim
+- git, curl, jq
 - gcc, g++, make, cmake
 - python3, pip
 - rustc, cargo, rustup
-- deno
-- node, npm, n
+- deno, dx
+- node, npm, npx, n
 
 ## SSH keys
 
